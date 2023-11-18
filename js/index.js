@@ -2,7 +2,7 @@
 
 // menu-component
 var menu_items =  [];
-
+var error="";
 var original_content;
 
 
@@ -617,6 +617,47 @@ $(document).ready(function(){
     render_table(selected_tab);
 
   }
+
+  function allowSubmit() {
+    console.log("activeating");
+    var close_req={};
+    close_req.email = $("input#email").val();
+    close_req.file_uar = $('input[name="file_uar"]:checked').val();
+    close_req.charge_fee = $('input[name="charge_fee"]:checked').val();
+    close_req.reason = $("input#reason").val();
+    close_req.note = $("input#note").val();
+    close_req.charge_fee = $('input[name="charge_fee"]:checked').val();
+    if(close_req.email!="" && close_req.email.includes("@") && close_req.file_uar!=undefined && close_req.reason!="" &&close_req.note!="" && close_req.charge_fee!=undefined )
+        {
+            $("#close-btn").addClass("active");
+            error="";
+           
+        }
+    else 
+        {
+        error = "All Fields are required!";
+        console.log(error);
+        $("#close-btn").removeClass("active");
+        }
+    
+    }
+
+  function submit_close_account()
+  {
+    var close_req={};
+    close_req.email = $("input#email").val();
+    close_req.file_uar = $('input[name="file_uar"]:checked').val();
+    close_req.charge_fee = $('input[name="charge_fee"]:checked').val();
+    close_req.reson = $("input#reason").val();
+    close_req.note = $("input#note").val();
+
+    console.log("submited",close_req);
+    $("#close_error").html(error);
+    if(error=="" && close_req.charge_fee=="yes")
+    {
+        handleCloseAccount(false);  
+    }
+}
 
   
 

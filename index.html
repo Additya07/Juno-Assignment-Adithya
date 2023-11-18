@@ -63,7 +63,7 @@
                                 Email
                             </div>
                             <div class="input">
-                                <input type="text" id="email">
+                                <input oninput="allowSubmit()" type="text" id="email">
                             </div>
                         </div>
                         <div class="input-holder radio">
@@ -71,8 +71,8 @@
                                 Want to file UAR
                             </div>
                             <div class="radio-input">
-                                <input type="radio" name="file_uar" value="yes" id="email"><span>Yes</span>
-                                <input type="radio" name="file_uar" value="no" id="email"><span>No</span>
+                                <input oninput="allowSubmit()" type="radio" name="file_uar" value="yes" id="file_uar_y"><span>Yes</span>
+                                <input oninput="allowSubmit()" type="radio" name="file_uar" value="no" id="file_uar_n"><span>No</span>
                                 
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                                 Reason
                             </div>
                             <div class="input">
-                                <input type="text" id="reason">
+                                <input oninput="allowSubmit()" type="text" id="reason">
                             </div>
                         </div>
                         <div class="input-holder">
@@ -89,16 +89,21 @@
                                 Note
                             </div>
                             <div class="input">
-                                <input type="text" id="note">
+                                <input oninput="allowSubmit()" type="text" id="note">
+                            </div>
+                        </div>
+                        <div class="input-holder">
+                            <div id="close_error" style="color:red;">
+
                             </div>
                         </div>
                     </div>
                     <div class="dialogue-footer">
                         <div class="radio-input">
-                            <input type="radio" name="charge_fee" value="true" id="charge_fee">
+                            <input onchange="allowSubmit()" type="radio" name="charge_fee" value="yes" id="charge_fee">
                             <span>Charge closure fee</span>
                         </div>
-                        <div class="close-btn">
+                        <div onclick="submit_close_account()" id="close-btn">
                             close account
                         </div>
                     </div>
