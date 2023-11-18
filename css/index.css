@@ -773,6 +773,7 @@ html,body {
     }
 
     #snackbar {
+        display: none;
         background-color: #050505;
         font-weight: 700;
         font-size: .875rem;
@@ -1619,7 +1620,8 @@ html,body {
         margin:1rem;
         position: absolute;
         z-index: 45;
-        bottom: 0;
+        bottom: 3rem;
+        display: none;
     
         padding: 1rem;
         border-radius: .5rem;
