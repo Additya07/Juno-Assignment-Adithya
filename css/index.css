@@ -771,6 +771,26 @@ html,body {
         cursor: pointer;
     
     }
+
+    #snackbar {
+        background-color: #050505;
+        font-weight: 700;
+        font-size: .875rem;
+        color:#c6c5fa;
+        text-align: center;
+        width:calc(40% - 2rem);
+        box-sizing: border-box;
+        margin:1.5rem;
+        position: absolute;
+        z-index: 45;
+        top: 0;
+        right:0;
+    
+        padding: 1rem;
+        border-radius: .5rem;
+    
+    
+    }
     
 }
 @media only screen and (max-width:772px){
@@ -1589,4 +1609,23 @@ html,body {
         cursor: pointer;
     
     }
+
+    #snackbar {
+        background-color: #050505;
+        color:#a8a7ff;
+        text-align: center;
+        width:calc(100% - 2rem);
+        box-sizing: border-box;
+        margin:1rem;
+        position: absolute;
+        z-index: 45;
+        bottom: 0;
+    
+        padding: 1rem;
+        border-radius: .5rem;
+    
+    
+    }
 }
+
+

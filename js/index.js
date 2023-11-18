@@ -6,7 +6,7 @@ var error="";
 var original_content;
 
 
-// userdata
+// userdata interface
 var user = {
     name:"",
     email:"",
@@ -14,7 +14,7 @@ var user = {
 }
 
 
-// page-content
+// page-content data 
 var page_content = {
 }
 
@@ -23,7 +23,10 @@ var page_content = {
 var selected_menu ="";
 var selected_tab = ""; 
 var sort_descending = [];
-// elements
+
+
+
+// elements references
 
 var hamburger = $(".hamburger");
 var menu_element = $("#menu-holder");
@@ -33,6 +36,9 @@ var table_headings = $("tr#heading");
 var table_body = $("tr#body");
 
 var count = 0;
+
+
+// ------------- mobile nav interactions -----------------
 
 
 $('.hamburger').click(function(){
@@ -46,7 +52,7 @@ $('.close-menu').click(function(){
   
 })
 
-// menu-component
+// ---------------------- menu-component --------------------------
 function render_menu(menutitle="Monitoring")
 {
   menu_element.html("");
@@ -91,7 +97,7 @@ function handle_menu_click()
   }
 
 
-// tabs-component
+// ---------------------- tabs-component -----------------------
 function render_tabs(tab=page_content[selected_menu]["tabs"][0])
 {
     let tabs = page_content[selected_menu]["tabs"];
@@ -148,7 +154,7 @@ function handle_tab_click()
     });
 }
 
-// table-component 
+// --------------------------------  table-component 
 
 function render_table(tab)
 {
@@ -157,6 +163,10 @@ function render_table(tab)
     if(table_data && table_data.length>0)
     {
         let table_keys = Object.keys(table_data[0]);
+
+
+
+        // ----------------------- table headers comp -----------------------
     
     table_comp.html("");
     var newRow = $("<tr>");
@@ -273,6 +283,10 @@ function render_table(tab)
 
     handle_table_sort();
 
+
+
+    // -------------- table data comp -----------------------
+
     table_data.map((data)=>{
         table_comp.append(
             `
@@ -333,14 +347,7 @@ function render_table(tab)
     
 }
 
-function handleCloseAccount(val)
-{
-    console.log(val);
-    if(val==true)
-    $("#overlay-container").removeClass("close");
-    else
-    $("#overlay-container").addClass("close");
-}
+
 
 function handle_table_sort()
   {
@@ -373,6 +380,21 @@ function handle_table_sort()
 
 
 
+//   --------------- handle close account
+
+function handleCloseAccount(val)
+{
+    console.log(val);
+    if(val==true)
+    $("#overlay-container").removeClass("close");
+    else
+    $("#overlay-container").addClass("close");
+}
+
+
+
+
+
 $(document).ready(function(){
     
 
@@ -381,6 +403,11 @@ $(document).ready(function(){
 
   });
 
+
+
+
+//    ---------- account info comp -----------------------
+
   function set_user()
   {
     $("#account-info #name").html(user.name);
@@ -388,6 +415,10 @@ $(document).ready(function(){
         $("#avatar-holder #avatar").css("background-image", "url('"+user.avatar_url+"')");
 
   }
+
+
+
+//   -------------- loading Json Data ------------------------
 
 
   function getData()
@@ -416,6 +447,10 @@ $(document).ready(function(){
     const options = { day: '2-digit', month: 'short', year: 'numeric' };
     return new Date(date).toLocaleDateString('en-US', options);
   }
+
+
+
+//  -------------------------- search sort filters ------------------------
 
   function sort_data(key)
   {
@@ -618,6 +653,10 @@ $(document).ready(function(){
 
   }
 
+
+
+//   ----------------- Close Account comp-------------- 
+
   function allowSubmit() {
     console.log("activeating");
     var close_req={};
@@ -655,8 +694,26 @@ $(document).ready(function(){
     $("#close_error").html(error);
     if(error=="" && close_req.charge_fee=="yes")
     {
-        handleCloseAccount(false);  
+        var result = confirmDialog("Are you sure you want to proceed?");
+        
+        if(result)
+        {
+            showSnackbar("Request Sent! for Account closure.");
+
+            handleCloseAccount(false);  
+        }
     }
+}
+
+function confirmDialog(message) {
+    var dialogResult =  window.confirm(message);
+    return dialogResult;
+
+}
+
+function showSnackbar(message) {
+    var snackbar = $("#snackbar");
+    snackbar.text(message).fadeIn().delay(3000).fadeOut();
 }
 
   
