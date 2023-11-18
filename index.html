@@ -14,6 +14,9 @@
 
     <div class="dashboard-main">
         <div class="sidenav-container">
+            <div class="close-menu">
+                <img src="./img/cross.gif" alt="">
+            </div>
             <div class="side-nav-top">
                 <div class="logo-holder">
                     <img src="./img/logo-placeholder.png" alt="Logo Here">
@@ -101,12 +104,19 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="page-head">
+                <header class="hamburger">
+                    <img src="./img/menu.svg" alt="">
+                    <span>Menu</span>
+                </header>
                 <h2 id="page-heading">
-                    Monitoring
+                    Monitorin
                 </h2>
-
+                <div id="comming-soon">
+                    <img src="./img/comming_soon.gif" alt=""> <br/>
+                    <div>We're crafting something new. Stay tuned! for Updates...</div>
+                </div>
                 <section>
                     <div id="tabs-container">
                         
@@ -124,8 +134,8 @@
                 </section>
             </div>
             <div class="page-body">
-                <div class="tab-content">
-                    <div class="tab-header">
+                <div id="tab-content">
+                    <div id="tab-header">
                         <div class="search-container">
                             <div class="icon">
                                 <img src="./img/search.svg" alt="">
@@ -146,7 +156,7 @@
                                 </select>
                             </div>
                             <div class="filter-item">
-                                <select name="risk-select" id="risk-level">
+                                <select onchange="sort_data('risk_select')" name="risk-select" id="risk-level">
                                     <option value="all">Risk level</option>
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
@@ -173,7 +183,7 @@
 <div class="page-head">
 
 </div>
-    <script src="./js/index.js"></script>
+    <script  src="./js/index.js"></script>
     
 </body>
 </html>

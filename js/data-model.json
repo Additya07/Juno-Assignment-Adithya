@@ -1,0 +1,227 @@
+{
+   
+    "menu_items" : ["Overview","Onboarding","Monitoring","Flagging","Source of Income","UAR"],
+
+
+
+    "user" : {
+        "name":"Elon Musk",
+        "email":"elon@twitter.com",
+        "avatar_url":"./img/avatar.svg"
+    },
+
+
+    "page_content" : {
+    "Overview":{
+        "tabs": [],
+        "actions":[],
+        "data":[]
+    },
+    "Monitoring": {
+        "tabs": ["pending","completed"],
+        "actions":[
+            {
+                "icon":"./img/x-circle.svg",
+                "type":"danger",
+                "title":"Close account"
+            }
+        ],
+        "data": {
+            "pending": [
+            {
+                "user":{
+                    "name":"Sam Altman",
+                    "email":"Samaltman123@gmail.com"
+                },
+                "risk":"medium",
+                "trigger_reason":"IP Change",
+                "in_queue":"4 days",
+                "date_added":1697049000000,
+                "reviewed": {
+                    "status":"Yes",
+                    "on":"23 Aug, 2023"
+                }
+            },
+            {
+                "user":{
+                    "name":"Sameer Choubey",
+                    "email":"sameerchoubey123@gmail.com"
+                },
+                "risk":"high",
+                "trigger_reason":"FIFO",
+                "in_queue":"4 days",
+                "date_added":1700297979336,
+                "reviewed": {
+                    "status":"no",
+                    "on":null
+                }
+            },
+            {
+                "user":{
+                    "name":"Adarsh Panikkar",
+                    "email":"adarsh@onjuno.com"
+                },
+                "risk":"low",
+                "trigger_reason":"IP Change",
+                "in_queue":"5 days",
+                "date_added":1697049000000,
+                "reviewed": {
+                    "status":"No",
+                    "on":null
+                }
+            },
+            {
+                "user":{
+                    "name":"Pratik Shetty",
+                    "email":"pratik3@gmail.com"
+                },
+                "risk":"high",
+                "trigger_reason":"FIFO",
+                "in_queue":"5 days",
+                "date_added":1697049000000,
+                "reviewed": {
+                    "status":"Yes",
+                    "on":"12 Sept, 2023"
+                }
+            },
+            {
+                "user":{
+                    "name":"Elon Musk",
+                    "email":"elon@twitterceo.com"
+                },
+                "risk":"low",
+                "trigger_reason":"FIFO",
+                "in_queue":"5 days",
+                "date_added":1700297979336,
+                "reviewed": {
+                    "status":"Yes",
+                    "on":"12 Sept, 2023"
+                }
+            },
+            {
+                "user":{
+                    "name":"Trina Kundu",
+                    "email":"trina@onjuno.com"
+                },
+                "risk":"low",
+                "trigger_reason":"FIFO",
+                "in_queue":"5 days",
+                "date_added":1697049000000,
+                "reviewed": {
+                    "status":"Yes",
+                    "on":"12 Sept, 2023"
+                }
+            }
+            
+        ],
+            "completed":[
+                {
+                    "user":{
+                        "name":"Sam Altman",
+                        "email":"Samaltman123@gmail.com"
+                    },
+                    "risk":"medium",
+                    "action_reason":"flagged",
+                    "close_by":"14 days",
+                    "date_added":1697049000000,
+                    "action_by": {
+                        "name":"Neil",
+                        "email":"neil@onjuno.com"
+                    }
+                },
+                {
+                    "user":{
+                        "name":"Sameer Choubey",
+                        "email":"sameerchoubey123@gmail.com"
+                    },
+                    "risk":"high",
+                    "action_reason":"closed",
+                    "close_by":"14 days",
+                    "date_added":1697049000000,
+                    "action_by": {
+                        "name":"Pratik",
+                        "email":"pratik@onjuno.com"
+                    }
+                },
+                {
+                    "user":{
+                        "name":"Adarsh Panikkar",
+                        "email":"adarsh@onjuno.com"
+                    },
+                    "risk":"low",
+                    "action_reason":"IP Change",
+                    "close_by":"15 days",
+                    "date_added":1700297979336,
+                    "action_by": {
+                        "name":"Prashanth",
+                        "email":"prashanth@onjuno.com"
+                    }
+                },
+                {
+                    "user":{
+                        "name":"Pratik Shetty",
+                        "email":"pratik3@gmail.com"
+                    },
+                    "risk":"high",
+                    "action_reason":"FIFO",
+                    "close_by":"15 days",
+                    "date_added":1697049000000,
+                    "action_by": {
+                        "name":"Rasleen Kaur",
+                        "email":"rasleen@onjuno.com"
+                    }
+                },
+                {
+                    "user":{
+                        "name":"Elon Musk",
+                        "email":"elon@twitterceo.com"
+                    },
+                    "risk":"low",
+                    "action_reason":"FIFO",
+                    "close_by":"15 days",
+                    "date_added":1697049000000,
+                    "action_by": {
+                        "name":"Pratik Shetty",
+                        "email":"pratik@onjuno.com"
+                    }
+                },
+                {
+                    "user":{
+                        "name":"Trina Kundu",
+                        "email":"trina@onjuno.com"
+                    },
+                    "risk":"low",
+                    "action_reason":"FIFO",
+                    "close_by":"5 days",
+                    "date_added":1697049000000,
+                    "action_by": {
+                        "name":"Varun Deshpande",
+                        "email":"varun@onjuno.com"
+                    }
+                }
+                
+            ]
+        }
+    },
+    "Onboarding":{
+        "tabs": [],
+        "actions":[],
+        "data":[]
+    },
+    "Flagging":{
+        "tabs": [],
+        "actions":[],
+        "data":[]
+    },
+    "Source of Income":{
+        "tabs": [],
+        "actions":[],
+        "data":[]
+    },
+    "UAR":{
+        "tabs": [],
+        "actions":[],
+        "data":[]
+    }
+}
+}
