@@ -15,7 +15,7 @@
     <div class="dashboard-main">
         <div class="sidenav-container">
             <div class="close-menu">
-                <img src="./img/cross.gif" alt="">
+                <img src="./img/x.svg" alt="">
             </div>
             <div class="side-nav-top">
                 <div class="logo-holder">
@@ -141,12 +141,12 @@
                                 <img src="./img/search.svg" alt="">
                             </div>
                             <div class="input">
-                                <input type="search" placeholder="Search" name="search_query" id="search-input">
+                                <input oninput="search_user()" onkeyup="search_user()" type="search" placeholder="Search" name="search_query" id="search-input">
                             </div>
                         </div>
                         <div class="filter-options">
                             <div class="filter-item">
-                                <select  name="trigger-select" id="trigger-reason">
+                                <select  name="trigger_select" id="trigger-reason">
                                     <option  selected value="all">Trigger reason</option>
                                     <option value="Hard">Hard flag</option>
                                     <option value="Temp">Temp flag</option>
@@ -158,9 +158,9 @@
                             <div class="filter-item">
                                 <select onchange="sort_data('risk_select')" name="risk-select" id="risk-level">
                                     <option value="all">Risk level</option>
-                                    <option value="High">High</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="Low">Low</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
                                     
                                 </select>
                             </div>

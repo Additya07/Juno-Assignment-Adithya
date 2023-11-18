@@ -18,13 +18,14 @@ var user = {
 var page_content = {
 }
 
-var hamburger = $(".hamburger");
+
 
 var selected_menu ="";
 var selected_tab = ""; 
 var sort_descending = [];
 // elements
 
+var hamburger = $(".hamburger");
 var menu_element = $("#menu-holder");
 var tabs_container = $("#tabs-container");
 var table_comp = $("#table-comp");
@@ -33,20 +34,16 @@ var table_body = $("tr#body");
 
 var count = 0;
 
+
 $('.hamburger').click(function(){
-    if(count!=1)
-   { $('.sidenav-container').css("z-index","40");
-        count--;
-    }
-    else{
-        $('.sidenav-container').css("z-index","2");
-        count++;
-    }
+   
+    $('.sidenav-container').css({"z-index":"40","transform":"translateX(0%)","transition":"all 200ms ease-in-out"});
+    
 })
 $('.close-menu').click(function(){
 
-    $('.sidenav-container').css("z-index","2");
-    count=0;
+    $('.sidenav-container').css({"z-index":"40", "transform":"translateX(-100%)","transition":"all 150ms ease-out"});
+  
 })
 
 // menu-component
@@ -319,7 +316,7 @@ function render_table(tab)
                                     <td>
                                         <div class="review">
                                             <b>${data?.reviewed ? data.reviewed.status : data.action_by.name}</b> <br>
-                                            <span class="date"> ${data?.reviewed? (data.reviewed.on?data.reviewed.on : ""):(data.action_by? data.action_by.email :"")}</span>
+                                            <span class="date"> ${data?.reviewed? (data.reviewed.on? formatDate(data.reviewed.on) : ""):(data.action_by? data.action_by.email :"")}</span>
                                         </div>
                                     </td>
             </tr>
@@ -391,6 +388,7 @@ $(document).ready(function(){
         $("#avatar-holder #avatar").css("background-image", "url('"+user.avatar_url+"')");
 
   }
+
 
   function getData()
   {
@@ -563,13 +561,21 @@ $(document).ready(function(){
         let dataArray = original_content[selected_menu]["data"][selected_tab];
         console.log(dataArray);
         temp_data = [...dataArray];
+        let temporary_data;
+        console.log("present data", dataArray,$("#risk-level").val().toLowerCase()!='all');
+
+        if($("#risk-level").val().toLowerCase()!='all')
         
-        console.log("present data", dataArray);
-        
-        let temporary_data = $.grep(temp_data, function(obj) {
+        {
+            temporary_data = $.grep(temp_data, function(obj) {
            
             return obj.risk == $("#risk-level").val().toLowerCase();
           });
+        }
+        else 
+        {
+            temporary_data = dataArray;
+        }
         
        
 
@@ -580,6 +586,36 @@ $(document).ready(function(){
 
 
     }
+  }
+
+  function search_user()
+  {
+    let dataArray = original_content[selected_menu]["data"][selected_tab];
+    
+    temp_data = [...dataArray];
+    let temporary_data;
+    console.log("present data", dataArray,$("#search-input").val().toLowerCase()!='all');
+    let query = $("#search-input").val().toLowerCase();
+    let results = []
+    console.log($("#search-input").val());
+    if(query!="")
+    {
+        dataArray.map((data)=>{
+        if(data.user.email.toLowerCase().includes(query) || data.user.name.toLowerCase().includes(query) )
+        {
+            results.push(data);
+        }
+
+    });
+    }
+    else 
+    {
+        results = [...dataArray];
+    }
+
+    page_content[selected_menu]["data"][selected_tab] = [...results]
+    render_table(selected_tab);
+
   }
 
   
