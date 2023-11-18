@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juno Web Assignment - Intern | Aditya Nakka</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+    <div class="dashboard-main">
+        <div class="sidenav-container">
+            <div class="side-nav-top">
+                <div class="logo-holder">
+                    <img src="./img/logo-placeholder.png" alt="Logo Here">
+                </div>
+                <div id="menu-holder">
+                    
+                </div>
+            </div>
+            <div class="side-nav-bottom">
+                <div id="account-holder">
+                    <div id="avatar-holder">
+                        <div id="avatar">
+                            
+                        </div>
+                    </div>
+                    <div id="account-info">
+                        <div id="name">
+                            
+                        </div>
+                        <div id="email">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container">
+
+            <!-- close overlay dialogue -->
+
+            <div id="overlay-container" class="close">
+                <div class="dialogue-container">
+                    <div class="dialogue-heading">
+                        <div class="title">
+                            Close Account
+                        </div>
+                        <div onclick="handleCloseAccount(false)" class="close">
+                            <img src="./img/x.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="dialogue-body">
+                        <div class="input-holder">
+                            <div class="label">
+                                Email
+                            </div>
+                            <div class="input">
+                                <input type="text" id="email">
+                            </div>
+                        </div>
+                        <div class="input-holder radio">
+                            <div class="hint">
+                                Want to file UAR
+                            </div>
+                            <div class="radio-input">
+                                <input type="radio" name="file_uar" value="yes" id="email"><span>Yes</span>
+                                <input type="radio" name="file_uar" value="no" id="email"><span>No</span>
+                                
+                            </div>
+                        </div>
+                        <div class="input-holder">
+                            <div class="label">
+                                Reason
+                            </div>
+                            <div class="input">
+                                <input type="text" id="reason">
+                            </div>
+                        </div>
+                        <div class="input-holder">
+                            <div class="label">
+                                Note
+                            </div>
+                            <div class="input">
+                                <input type="text" id="note">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialogue-footer">
+                        <div class="radio-input">
+                            <input type="radio" name="charge_fee" value="true" id="charge_fee">
+                            <span>Charge closure fee</span>
+                        </div>
+                        <div class="close-btn">
+                            close account
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-head">
+                <h2 id="page-heading">
+                    Monitoring
+                </h2>
+
+                <section>
+                    <div id="tabs-container">
+                        
+                    </div>
+                    <div class="actions-container">
+                        <div onclick="handleCloseAccount(true)" class="action-btn">
+                            <div class="btn-icon">
+                                <img src="./img/x-circle.svg" alt="x">
+                            </div>
+                            <div class="btn-title">
+                                Close account
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="page-body">
+                <div class="tab-content">
+                    <div class="tab-header">
+                        <div class="search-container">
+                            <div class="icon">
+                                <img src="./img/search.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input type="search" placeholder="Search" name="search_query" id="search-input">
+                            </div>
+                        </div>
+                        <div class="filter-options">
+                            <div class="filter-item">
+                                <select  name="trigger-select" id="trigger-reason">
+                                    <option  selected value="all">Trigger reason</option>
+                                    <option value="Hard">Hard flag</option>
+                                    <option value="Temp">Temp flag</option>
+                                    <option value="Restricted">Restricted unflag</option>
+                                    <option value="Un flag">Un flag</option>
+                                    <option value="Reviewed">Reviewed</option>
+                                </select>
+                            </div>
+                            <div class="filter-item">
+                                <select name="risk-select" id="risk-level">
+                                    <option value="all">Risk level</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-body">
+                        <div class="table-holder">
+                            <table id="table-comp">
+                                <tr id="heading">
+                                    
+                                </tr>
+                               
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="page-head">
+
+</div>
+    <script src="./js/index.js"></script>
+    
+</body>
+</html>
