@@ -782,7 +782,7 @@ html,body {
         width:calc(40% - 2rem);
         box-sizing: border-box;
         margin:1.5rem;
-        position: absolute;
+        position: fixed;
         z-index: 45;
         top: 0;
         right:0;
@@ -1618,7 +1618,7 @@ html,body {
         width:calc(100% - 2rem);
         box-sizing: border-box;
         margin:1rem;
-        position: absolute;
+        position: fixed;
         z-index: 45;
         bottom: 3rem;
         display: none;
